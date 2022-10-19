@@ -3,17 +3,16 @@ orbs:
   cypress: cypress-io/cypress@1
 workflows:
   runs on: self hosted
-   build:
+build:
      jobs:
-        - cypress/run:
-           store_artifacts: true
-  scheduled-workflow:
+      - cypress/run:
+          store_artifacts: true
+scheduled-workflow:
    triggers:
-      - schedule:
-          cron: 5 0 * * *
-          filters:
-            branches:
+     - schedule:
+         cron: 5 0 * * *
+         filters:
+           branches:
              only: master
-                   RG>Sisu
-   jobs:
-     - cypress/run
+jobs:
+      - cypress/run
