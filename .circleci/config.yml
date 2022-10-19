@@ -9,7 +9,7 @@ workflows:
 scheduled-workflow:
   triggers:
     - schedule:
-        corn: "30 20 * * 1,2,3,4,5,6"
+        cron: 5 0 * * *
         filters:
           branches:
             only: master
