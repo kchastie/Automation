@@ -7,12 +7,11 @@ workflows:
       - cypress/run:
           record: true
 scheduled-workflow:
-   triggers:
-     - schedule:
-         cron: 5 0 * * *
-         filters:
-           branches:
-             only: master
+  triggers:
+    - schedule:
+        cron: 5 0 * * *
+        filters:
+          branches:
+            only: master
 jobs:
   - cypress/run
-
