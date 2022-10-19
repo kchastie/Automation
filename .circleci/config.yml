@@ -2,17 +2,17 @@ version: 2.1
 orbs:
   cypress: cypress-io/cypress@1
 workflows:
-  runs on: self-hosted
-build:
-     jobs:
+  build:
+    jobs:
       - cypress/run:
-          store_artifacts: true
-scheduled-workflow:
+          record: true
+ scheduled-workflow:
    triggers:
      - schedule:
          cron: 5 0 * * *
          filters:
            branches:
              only: master
-jobs:
+ jobs:
       - cypress/run
+
