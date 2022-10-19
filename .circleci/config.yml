@@ -40,12 +40,25 @@ jobs:
           command: |
             node -v
 workflows:
-  Example-Workflow:
+  version: 2
+  build-test-and-deploy:
     jobs:
-      - Hello-World
-      - Fetch-Code:
+      - build
+      - test1:
           requires:
-            - Hello-World
-      - Using-Node:
+            - build
+      - test2:
           requires:
-            - Fetch-Code
+            - test1
+      - deploy:
+          requires:
+            - test2
+            nightly:
+    triggers:
+      - schedule:
+          cron: "0 0 * * *"
+          filters:
+            branches:
+              only:
+                - main
+                - RG>Sisu
