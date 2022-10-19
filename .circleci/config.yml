@@ -2,6 +2,7 @@ version: 2.1
 orbs:
   cypress: cypress-io/cypress@1
 workflows:
+runs on: self hosted
   build:
     jobs:
       - cypress/run:
@@ -15,4 +16,3 @@ scheduled-workflow:
             only: master
   jobs:
     - cypress/run
-
