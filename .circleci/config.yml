@@ -6,13 +6,13 @@ workflows:
     jobs:
       - cypress/run:
           record: true
- scheduled-workflow:
+scheduled-workflow:
    triggers:
      - schedule:
          cron: 5 0 * * *
          filters:
            branches:
              only: master
- jobs:
+jobs:
       - cypress/run
 
