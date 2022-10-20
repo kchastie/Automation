@@ -4,13 +4,14 @@
   "main": "index.js",
   "scripts": {
     "cy:run": "cypress run",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "record": "cypress run --record --key 810dfb8f-4d21-4692-a5b8-9198aedb13c3"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "cypress": "^9.7.0",
+    "cypress": "^10.10.0",
     "cypress-iframe": "^1.0.1"
   }
 }
