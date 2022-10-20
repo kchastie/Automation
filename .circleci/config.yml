@@ -13,5 +13,3 @@ scheduled-workflow:
         filters:
           branches:
             only: master
-jobs:
-  cypress-run:
