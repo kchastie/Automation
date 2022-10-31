@@ -12,4 +12,4 @@ scheduled-workflow:
         cron: 5 0 * * *
         filters:
           branches:
-            only: master
+            only: main
