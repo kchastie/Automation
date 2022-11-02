@@ -1,6 +1,4 @@
 /// <reference types= 'Cypress'/>
-//import { makeid } from "../crmsources/nameRandomize";
-//import { makePhone } from "../crmsources/phoneRandomize";
 Cypress.on("uncaught:exception", (err, runnable) => {
   // returning false here prevents Cypress from
   // failing the test
@@ -14,8 +12,25 @@ describe("Sisu lead validation", function () {
     cy.get("#submit").click();
     cy.visit("https://my.sisu.co/transactions/records?reset_filters=True");
     cy.get('[tabindex="1"] > [data-col="agent_name"]').click();
-    let today = new Date().toLocaleDateString();
-    cy.get(':nth-child(2) > .text-field').should('have.text',today);
-    cy.get('#last_name').should('have.value', 'Cypress');
-  });
+    var today = new Date();
+    var dd = today.getDate();
+    
+    var mm = today.getMonth()+1; 
+    var yyyy = today.getFullYear();
+    if(dd<10) 
+    {
+        dd='0'+dd;
+    } 
+    
+    if(mm<10) 
+    {
+        mm='0'+mm;
+    } 
+    today = mm+'-'+dd+'-'+yyyy;
+    console.log(today);
+    today = mm+'/'+dd+'/'+yyyy;
+
+    cy.get(":nth-child(2) > .text-field").should("have.text", today);
+    cy.get("#last_name").should("have.value", "Cypress");
 });
+})
