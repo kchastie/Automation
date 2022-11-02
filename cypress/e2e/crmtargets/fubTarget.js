@@ -15,4 +15,21 @@ Cypress.on("uncaught:exception", (err, runnable) => {
             cy.get('h3 > .sc-gIBqdA > .sc-kmQMED > .sc-djWRfJ').should('contain', 'Cypress');
             cy.get('.assignedUserIdPersonInput-FSSelector > .sc-kmQMED > .sc-djWRfJ').should('have.text', 'RS Support');
             cy.get('.sc-djWRfJ > .fs-exclude').should('contain', 'TheSmartHomeSearch.com');
+              var today = new Date();
+    var dd = today.getDate();
+    
+    var mm = today.getMonth()+1; 
+    var yyyy = today.getFullYear();
+    if(dd<10) 
+    {
+        dd='0'+dd;
+    } 
+    
+    if(mm<10) 
+    {
+        mm='0'+mm;
+    } 
+    today = mm+'-'+dd+'-'+yyyy;
+    console.log(today);
+    today = mm+'/'+dd+'/'+yyyy;
         })})
